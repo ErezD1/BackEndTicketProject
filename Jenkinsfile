@@ -7,6 +7,11 @@ pipeline {
                 checkout scm
             }
         }
+        stage('Set Permissions') {
+            steps {
+                sh 'chmod +x ./mvnw'
+            }
+        }
         stage('Build') {
             steps {
                 sh './mvnw clean package'
