@@ -5,7 +5,7 @@
     <h1 align="center">BACKENDTICKETPROJECT</h1>
 </p>
 <p align="center">
-    <em></em>
+    <em>Back End using Java Springweb to make Database management and API using REST formation to send and receive changes.</em>
 </p>
 <p align="center">
 	<img src="https://img.shields.io/github/license/ErezD1/BackEndTicketProject?style=default&logo=opensourceinitiative&logoColor=white&color=0080ff" alt="license">
@@ -38,7 +38,11 @@
 
 ## 📍 Overview
 
-Data Storage and Retrieval: The repository folder contains interfaces for data storage and retrieval, such as CommentRepository, RoleRepository, TicketRepository, UserRepository, etc. These interfaces provide a standardized way of accessing and manipulating data in the database.2. Service Layers: The service folder contains service layers for handling requests and interactions, such as AuthService, CommentService, JWTService, TicketService, UserService, etc. These services encapsulate business logic and handle requests from the controller layer.3. Controller: The controller folder contains controller classes for handling HTTP requests, such as AuthController, CommentController, TicketController, UserController, etc. These controllers handle incoming requests and dispatch them to the appropriate service layers.4. Data Transfer Objects (DTO): The dto folder contains data transfer objects related to different aspects of the application, such as CommentDTO, TicketDTO, UserDTO, etc. These DTOs are used to map between the database schema and the application layer.5. Exception Handling: The exception folder contains exception handling classes for the application, such as AuthenticationException, BadRequestException, GlobalExceptionHandler, PaginationException, ResourceNotFoundException, T
+Data Storage and Retrieval: The repository folder contains interfaces for data storage and retrieval, such as CommentRepository, RoleRepository, TicketRepository, UserRepository, etc. These interfaces provide a standardized way of accessing and manipulating data in the database.
+Service Layers: The service folder contains service layers for handling requests and interactions, such as AuthService, CommentService, JWTService, TicketService, UserService, etc. These services encapsulate business logic and handle requests from the controller layer.
+Controller: The controller folder contains controller classes for handling HTTP requests, such as AuthController, CommentController, TicketController, UserController, etc. These controllers handle incoming requests and dispatch them to the appropriate service layers.
+Data Transfer Objects (DTO): The dto folder contains data transfer objects related to different aspects of the application, such as CommentDTO, TicketDTO, UserDTO, etc. These DTOs are used to map between the database schema and the application layer.
+Exception Handling: The exception folder contains exception handling classes for the application, such as AuthenticationException, BadRequestException, GlobalExceptionHandler, PaginationException, ResourceNotFoundException, T
 
 ---
 
