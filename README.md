@@ -54,147 +54,111 @@ Exception Handling: The exception folder contains exception handling classes for
 
 ```sh
 └── BackEndTicketProject/
-    ├── app.log
-    ├── filetree.txt
-    ├── generate_tree.py
-    ├── hs_err_pid28924.log
-    ├── mvnw
-    ├── mvnw.cmd
-    ├── pom.xml
-    ├── README.md
-    └── src
-        ├── main
-        │   ├── java
-        │   │   └── edu
-        │   │       └── erezd
-        │   │           └── erezproject
-        │   │               ├── config
-        │   │               │   ├── AppConfig.java
-        │   │               │   ├── OpenApi3Config.java
-        │   │               │   ├── RSAKeyProperties.java
-        │   │               │   └── SQLRunner.java
-        │   │               ├── controller
-        │   │               │   ├── AuthController.java
-        │   │               │   ├── CommentController.java
-        │   │               │   ├── TicketController.java
-        │   │               │   └── UserController.java
-        │   │               ├── dto
-        │   │               │   ├── comment
-        │   │               │   │   ├── CommentCreateDTO.java
-        │   │               │   │   ├── CommentListDTO.java
-        │   │               │   │   ├── CommentRequestDTO.java
-        │   │               │   │   ├── CommentResponseDTO.java
-        │   │               │   │   └── CommentUpdateDTO.java
-        │   │               │   ├── error
-        │   │               │   │   └── ErrorDTO.java
-        │   │               │   ├── login
-        │   │               │   │   ├── LoginRequestDTO.java
-        │   │               │   │   └── LoginResponseDTO.java
-        │   │               │   ├── ticket
-        │   │               │   │   ├── TicketCloseDTO.java
-        │   │               │   │   ├── TicketCreateDTO.java
-        │   │               │   │   ├── TicketListDTO.java
-        │   │               │   │   └── TicketResponseDTO.java
-        │   │               │   └── user
-        │   │               │       ├── UserCreateDTO.java
-        │   │               │       ├── UserRequestDTO.java
-        │   │               │       └── UserResponseDTO.java
-        │   │               ├── entity
-        │   │               │   ├── Comment.java
-        │   │               │   ├── Role.java
-        │   │               │   ├── Status.java
-        │   │               │   ├── Ticket.java
-        │   │               │   └── User.java
-        │   │               ├── ErezProjectApplication.java
-        │   │               ├── exception
-        │   │               │   ├── AuthenticationException.java
-        │   │               │   ├── BadRequestException.java
-        │   │               │   ├── GlobalExceptionHandler.java
-        │   │               │   ├── PaginationException.java
-        │   │               │   ├── ResourceNotFoundException.java
-        │   │               │   ├── TicketException.java
-        │   │               │   ├── TicketExceptionHandler.java
-        │   │               │   ├── UnauthorizedException.java
-        │   │               │   └── UserAlreadyExistsException.java
-        │   │               ├── repository
-        │   │               │   ├── CommentRepository.java
-        │   │               │   ├── RoleRepository.java
-        │   │               │   ├── TicketRepository.java
-        │   │               │   └── UserRepository.java
-        │   │               ├── security
-        │   │               │   ├── CustomAuthenticationEntryPoint.java
-        │   │               │   └── SecurityConfig.java
-        │   │               └── service
-        │   │                   ├── AuthService.java
-        │   │                   ├── CommentService.java
-        │   │                   ├── impl
-        │   │                   │   ├── AuthServiceImpl.java
-        │   │                   │   ├── CommentServiceImpl.java
-        │   │                   │   ├── TicketServiceImpl.java
-        │   │                   │   └── UserServiceImpl.java
-        │   │                   ├── JWTService.java
-        │   │                   ├── TicketService.java
-        │   │                   └── UserService.java
-        │   └── resources
-        │       ├── application.properties
-        │       ├── certs
-        │       │   ├── keypair.pem
-        │       │   └── pub.pem
-        │       ├── http-client.private.env.json
-        │       ├── logback-spring.xml
-        │       ├── META-INF
-        │       │   ├── MANIFEST.MF
-        │       │   ├── maven
-        │       │   │   └── org.webjars
-        │       │   │       └── swagger-ui
-        │       │   │           ├── pom.properties
-        │       │   │           └── pom.xml
-        │       │   └── resources
-        │       │       └── webjars
-        │       │           └── swagger-ui
-        │       │               └── 5.10.3
-        │       │                   ├── favicon-16x16.png
-        │       │                   ├── favicon-32x32.png
-        │       │                   ├── index.css
-        │       │                   ├── index.css.gz
-        │       │                   ├── index.html
-        │       │                   ├── index.html.gz
-        │       │                   ├── oauth2-redirect.html
-        │       │                   ├── oauth2-redirect.html.gz
-        │       │                   ├── swagger-initializer.js
-        │       │                   ├── swagger-initializer.js.gz
-        │       │                   ├── swagger-ui-bundle.js
-        │       │                   ├── swagger-ui-bundle.js.gz
-        │       │                   ├── swagger-ui-bundle.js.map
-        │       │                   ├── swagger-ui-es-bundle-core.js
-        │       │                   ├── swagger-ui-es-bundle-core.js.gz
-        │       │                   ├── swagger-ui-es-bundle-core.js.map
-        │       │                   ├── swagger-ui-es-bundle.js
-        │       │                   ├── swagger-ui-es-bundle.js.gz
-        │       │                   ├── swagger-ui-es-bundle.js.map
-        │       │                   ├── swagger-ui-standalone-preset.js
-        │       │                   ├── swagger-ui-standalone-preset.js.gz
-        │       │                   ├── swagger-ui-standalone-preset.js.map
-        │       │                   ├── swagger-ui.css
-        │       │                   ├── swagger-ui.css.gz
-        │       │                   ├── swagger-ui.css.map
-        │       │                   ├── swagger-ui.js
-        │       │                   ├── swagger-ui.js.gz
-        │       │                   └── swagger-ui.js.map
-        │       └── tickets.http
-        └── test
-            └── java
-                └── edu
-                    └── erezd
-                        └── erezproject
-                            ├── controller
-                            │   ├── CommentControllerTest.java
-                            │   ├── JwtTokenUtil.java
-                            │   ├── TicketControllerTest.java
-                            │   └── UserControllerTest.java
-                            ├── ErezProjectApplicationTests.java
-                            └── security
-                                └── TestRSAKeyConfig.java
+┣ 📂src
+┃ ┣ 📂main
+┃ ┃ ┣ 📂java
+┃ ┃ ┃ ┗ 📂edu
+┃ ┃ ┃   ┗ 📂erezd
+┃ ┃ ┃     ┗ 📂erezproject
+┃ ┃ ┃       ┣ 📂config
+┃ ┃ ┃       ┃ ┣ 📜AppConfig.java
+┃ ┃ ┃       ┃ ┣ 📜OpenApi3Config.java
+┃ ┃ ┃       ┃ ┣ 📜RSAKeyProperties.java
+┃ ┃ ┃       ┃ ┗ 📜SQLRunner.java
+┃ ┃ ┃       ┣ 📂controller
+┃ ┃ ┃       ┃ ┣ 📜AuthController.java
+┃ ┃ ┃       ┃ ┣ 📜CommentController.java
+┃ ┃ ┃       ┃ ┣ 📜TicketController.java
+┃ ┃ ┃       ┃ ┗ 📜UserController.java
+┃ ┃ ┃       ┣ 📂dto
+┃ ┃ ┃       ┃ ┣ 📂comment
+┃ ┃ ┃       ┃ ┃ ┣ 📜CommentCreateDTO.java
+┃ ┃ ┃       ┃ ┃ ┣ 📜CommentListDTO.java
+┃ ┃ ┃       ┃ ┃ ┣ 📜CommentRequestDTO.java
+┃ ┃ ┃       ┃ ┃ ┣ 📜CommentResponseDTO.java
+┃ ┃ ┃       ┃ ┃ ┗ 📜CommentUpdateDTO.java
+┃ ┃ ┃       ┃ ┣ 📂error
+┃ ┃ ┃       ┃ ┃ ┗ 📜ErrorDTO.java
+┃ ┃ ┃       ┃ ┣ 📂login
+┃ ┃ ┃       ┃ ┃ ┣ 📜LoginRequestDTO.java
+┃ ┃ ┃       ┃ ┃ ┗ 📜LoginResponseDTO.java
+┃ ┃ ┃       ┃ ┣ 📂ticket
+┃ ┃ ┃       ┃ ┃ ┣ 📜TicketCloseDTO.java
+┃ ┃ ┃       ┃ ┃ ┣ 📜TicketCreateDTO.java
+┃ ┃ ┃       ┃ ┃ ┣ 📜TicketListDTO.java
+┃ ┃ ┃       ┃ ┃ ┗ 📜TicketResponseDTO.java
+┃ ┃ ┃       ┃ ┗ 📂user
+┃ ┃ ┃       ┃   ┣ 📜UserCreateDTO.java
+┃ ┃ ┃       ┃   ┣ 📜UserRequestDTO.java
+┃ ┃ ┃       ┃   ┗ 📜UserResponseDTO.java
+┃ ┃ ┃       ┣ 📂entity
+┃ ┃ ┃       ┃ ┣ 📜Comment.java
+┃ ┃ ┃       ┃ ┣ 📜Role.java
+┃ ┃ ┃       ┃ ┣ 📜Status.java
+┃ ┃ ┃       ┃ ┣ 📜Ticket.java
+┃ ┃ ┃       ┃ ┗ 📜User.java
+┃ ┃ ┃       ┣ 📂exception
+┃ ┃ ┃       ┃ ┣ 📜AuthenticationException.java
+┃ ┃ ┃       ┃ ┣ 📜BadRequestException.java
+┃ ┃ ┃       ┃ ┣ 📜GlobalExceptionHandler.java
+┃ ┃ ┃       ┃ ┣ 📜PaginationException.java
+┃ ┃ ┃       ┃ ┣ 📜ResourceNotFoundException.java
+┃ ┃ ┃       ┃ ┣ 📜TicketException.java
+┃ ┃ ┃       ┃ ┣ 📜TicketExceptionHandler.java
+┃ ┃ ┃       ┃ ┣ 📜UnauthorizedException.java
+┃ ┃ ┃       ┃ ┗ 📜UserAlreadyExistsException.java
+┃ ┃ ┃       ┣ 📂repository
+┃ ┃ ┃       ┃ ┣ 📜CommentRepository.java
+┃ ┃ ┃       ┃ ┣ 📜RoleRepository.java
+┃ ┃ ┃       ┃ ┣ 📜TicketRepository.java
+┃ ┃ ┃       ┃ ┗ 📜UserRepository.java
+┃ ┃ ┃       ┣ 📂security
+┃ ┃ ┃       ┃ ┣ 📜CustomAuthenticationEntryPoint.java
+┃ ┃ ┃       ┃ ┗ 📜SecurityConfig.java
+┃ ┃ ┃       ┣ 📂service
+┃ ┃ ┃       ┃ ┣ 📂impl
+┃ ┃ ┃       ┃ ┃ ┣ 📜AuthServiceImpl.java
+┃ ┃ ┃       ┃ ┃ ┣ 📜CommentServiceImpl.java
+┃ ┃ ┃       ┃ ┃ ┣ 📜TicketServiceImpl.java
+┃ ┃ ┃       ┃ ┃ ┗ 📜UserServiceImpl.java
+┃ ┃ ┃       ┃ ┣ 📜AuthService.java
+┃ ┃ ┃       ┃ ┣ 📜CommentService.java
+┃ ┃ ┃       ┃ ┣ 📜JWTService.java
+┃ ┃ ┃       ┃ ┣ 📜TicketService.java
+┃ ┃ ┃       ┃ ┗ 📜UserService.java
+┃ ┃ ┃       ┗ 📜ErezProjectApplication.java
+┃ ┃ ┗ 📂resources
+┃ ┃   ┣ 📂certs
+┃ ┃   ┃ ┣ 📜keypair.pem
+┃ ┃   ┃ ┗ 📜pub.pem
+┃ ┃   ┃ ┗ 📜MANIFEST.MF
+┃ ┃   ┣ 📂static
+┃ ┃   ┣ 📂templates
+┃ ┃   ┣ 📜application.properties
+┃ ┃   ┣ 📜http-client.private.env.json
+┃ ┃   ┣ 📜logback-spring.xml
+┃ ┃   ┗ 📜tickets.http
+┃ ┗ 📂test
+┃   ┗ 📂java
+┃     ┗ 📂edu
+┃       ┗ 📂erezd
+┃         ┗ 📂erezproject
+┃           ┣ 📂controller
+┃           ┃ ┣ 📜CommentControllerTest.java
+┃           ┃ ┣ 📜JwtTokenUtil.java
+┃           ┃ ┣ 📜TicketControllerTest.java
+┃           ┃ ┗ 📜UserControllerTest.java
+┃           ┣ 📂security
+┃           ┃ ┗ 📜TestRSAKeyConfig.java
+┃           ┗ 📜ErezProjectApplicationTests.java
+┣ 📜app.log
+┣ 📜filetree.txt
+┣ 📜HELP.md
+┣ 📜mvnw
+┣ 📜mvnw.cmd
+┣ 📜pom.xml
+┗ 📜README.md
+
 ```
 
 </details>
